@@ -2,9 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 
-.custom-card-image .card.image-full:before{
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: 0;
+  overflow-x: none;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  /* background-color: #202142; */
+  color: #fff;
+  line-height: 1.6;
+}
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+.custom-card-image .card.image-full:before {
   border-radius: 0.5rem;
   opacity: 0.45;
-
+}
+.bttn {
+  @apply w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md;
+}
+.bttn-2 {
+  @apply w-fit flex items-center justify-center px-6 py-1.5 border border-transparent text-base font-medium rounded-md;
+}
+.bttn-primary {
+  @apply text-white bg-indigo-600 hover:bg-indigo-700 md:text-lg md:px-8;
+}
+.bttn-secondary {
+  @apply text-indigo-700 bg-indigo-300 hover:bg-indigo-200 md:text-lg md:px-8;
+}
+.search-input {
+  @apply focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm;
 }

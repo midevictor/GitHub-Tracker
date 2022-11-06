@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landing from "./Pages/landing/Landing";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Alert from "./components/layout/Alert"
@@ -20,7 +21,8 @@ function App() {
         <main className="container mx-auto px-3 pb-12">
           <Alert />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Landing/>} />
+            <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/user/:login" element={<User />} />
             <Route path="/NotFound" element={<NotFound />} />
