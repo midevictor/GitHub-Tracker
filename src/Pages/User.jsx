@@ -7,13 +7,16 @@ import { useParams } from "react-router-dom";
 import GithubContext from "../context/github/GithubContext";
 import RepoList from "../components/repos/RepoList";
 
+
 function User() {
-  const { getUser, user, loading, getUserRepos } = useContext(GithubContext);
+  const { getUser, user, loading, repos, getUserRepos } = useContext(GithubContext);
 
   const params = useParams();
 
   useEffect(() => {
     getUser(params.login);
+    getUserRepos(params.login);
+   
   }, []);
 
   const {
@@ -41,7 +44,7 @@ function User() {
     <>
       <div className="w-full mx-auto lg:w-10/12">
         <div className="mb-4">
-          <Link to="/home" className="btn btn-ghost">
+          <Link to="/home" className="btn btn-ghost bg-indigo-700">
             Back To Search
           </Link>
         </div>
@@ -161,6 +164,12 @@ function User() {
             </div>
           </div>
         </div>
+
+        <RepoList repos={repos} />
+
+
+
+        
 
        
       </div>
